@@ -15,3 +15,6 @@
 
 # Add a feed source
 #sed -i '$a src-git lienol https://github.com/Lienol/openwrt-package' feeds.conf.default
+
+
+sed -i 's/mac_addr = of_get_mac_address(rt2x00dev->dev->of_node)/mac_addr = of_get_mac_address(rt2x00dev->dev->of_node, eeprom_mac_addr)/' /workdir/openwrt/build_dir/target-x86_64_musl/linux-x86_64/backports-5.10.42-1/drivers/net/wireless/ralink/rt2x00/rt2x00dev.c
